@@ -5,8 +5,8 @@ pipeline {
             steps {
                 sh 'python -m venv .venv'
                 sh '.venv/bin/pip install poetry poethepoet'
-                sh 'poetry install'
-                sh 'poe test'
+                sh '.venv/bin/poetry install'
+                sh '.venv/bin/poe test'
             }
         }
     }
