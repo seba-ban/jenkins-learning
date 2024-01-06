@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'sleep 3600'
+                sh 'python -m venv .venv'
+                sh '. .venv/bin/activate'
                 sh 'pip install poetry poethepoet'
                 sh 'poetry install'
                 sh 'poe test'
