@@ -4,8 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'python -m venv .venv'
-                sh '. .venv/bin/activate'
-                sh 'pip install poetry poethepoet'
+                sh '.venv/bin/pip install poetry poethepoet'
                 sh 'poetry install'
                 sh 'poe test'
             }
