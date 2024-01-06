@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'python --version'
+                sh 'pip install poetry poethepoet'
+                sh 'poetry install'
+                sh 'poe test'
             }
         }
     }
