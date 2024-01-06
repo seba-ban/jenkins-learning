@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                sh 'whoami'
                 sh 'pip install poetry poethepoet'
                 sh 'poetry install'
                 sh 'poe test'
